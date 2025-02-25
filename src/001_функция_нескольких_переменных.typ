@@ -40,25 +40,4 @@ $
   lim_(M arrow M_0) Delta u(M_0) = 0
 $
 
-= Частные производные
-
-$
-  z = f(x, y)
-$
-
-Назовём $Delta z_x$ частным прирощением
-
-$
-  Delta z_x = f(x + Delta x, y) - f(x, y) \
-
-  Delta z_y = f(x, y + Delta y) - f(x, y) \
-
-  Delta z = f(x + Delta x, y + Delta y) - f(x, y)
-$
-
-$
-  z'_x = frac(diff z, diff x) = lim_(Delta x -> 0) frac(Delta z_x, Delta x) \
-
-  z'_y = frac(diff z, diff y) = lim_(Delta x -> 0) frac(Delta z_y, Delta y) \
-$
 
