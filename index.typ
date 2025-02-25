@@ -7,11 +7,9 @@
   lower(it)
 }
 
-
 #show: ilm.with(
-  title: [Название],
-  author: 
-    "Панков Василий <pank-su>",
+  title: [Мат. анализ],
+  author: "Панков Василий <pank-su>",
   author-format: (author) => [
     #stack(dir: ltr)[#block(
         image("src/images/000_avatar.png", width: 3em, height: 3em),
@@ -20,20 +18,18 @@
       )][#h(1em)][#text(author, size: 1.6em)]
   ],
   date: datetime.today(),
-  abstract: [Кто введёт? Насколько краткий конспект? на чём основан?],
+  abstract: [Лекции второго семестра ],
   table-of-contents: outline(depth: 2),
-  external-link-circle: false
+  external-link-circle: false,
 )
 
-#include "src/000_введение.typ"
-
+#include "src/001_функция_нескольких_переменных.typ"
 
 /*
 ==============================================================================
                           Далее идут приложения
 ==============================================================================
 */
-
 
 #set heading(numbering: (..nums) => {
   if nums.pos().len() == 1 {
