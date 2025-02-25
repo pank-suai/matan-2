@@ -117,3 +117,20 @@ $
     dif^2 z = dif (dif z) = dif ((diff z) / (diff x) dif x + (diff z)/(diff y) dif y) = \ = ((diff z) / (diff x) dif x + (diff z)/(diff y) dif y)'_x dif x + ((diff z) / (diff x) dif x + (diff z)/(diff y) dif y)'_y dif x = \ = (diff^2 z)/(diff x^2) dif x^2 + 2(diff^2 z)/(diff y diff x) dif y dif x + (diff^2z)/(diff y ^2 )
   $
 ]
+
+
+= Дифференцирование сложных функций
+
+Пусть $z = f(x,y)$, $x = x(t)$, $y = y(t)$, то тогда $z = f(x(t); y(t)) quad (x;y) in D$:
+
+$
+  (dif z)/(dif t) = (diff z)/(diff x) dot (dif x)/(dif y) + (diff z)/(diff y) dot (dif y) / (dif t) \
+  (dif z)/(dif x) = (diff z)/(diff x) + (diff z)/(diff y) dot (dif y)/(dif x)
+$
+
+Пусть $z = f(x, y)$, $x = x(u; v)$, $y = y(u;v)$, тогда:
+
+$
+  (diff z)/(diff u) = (diff z)/(diff x) dot (diff x)/(diff u) + (diff z)/(diff y) dot (diff y)/(diff u) \
+  (diff z)/(diff v) = (diff z)/(diff x) dot (diff x)/(diff v) + (diff z)/(diff y) dot (diff y)/(diff v)
+$
