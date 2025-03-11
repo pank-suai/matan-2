@@ -134,3 +134,27 @@ $
   (diff z)/(diff u) = (diff z)/(diff x) dot (diff x)/(diff u) + (diff z)/(diff y) dot (diff y)/(diff u) \
   (diff z)/(diff v) = (diff z)/(diff x) dot (diff x)/(diff v) + (diff z)/(diff y) dot (diff y)/(diff v)
 $
+
+= Полная производная
+
+#example(title: [Пример])[
+  $
+    z = ln (x^2 + y^2) quad x = u dot v, space y = u/v \
+
+    (diff z)/(diff u) = (diff z)/(diff x) dot (diff x)/(diff u) + (diff z)/(diff y) dot (diff y)/(diff u) \
+
+    (diff x)/(diff v) = (diff z)/(diff x) dot (diff x)/(diff v) + (diff z)/(diff y) dot (diff y)/(diff v) \
+
+    "Подставим для решения нашего примера:"\
+    (diff z)/(diff u) = (2x)/(x^2 y^2) dot v + (2y)/(x^2 + y^2) dot 1/v = (2 u v)/(u^2 v^2 + u^2/v^2) dot v + (2u)/(v(u^2 v^2 + u^2/v^2)) dot 1/v = \ 
+     = (2 u v^4 + 2u)/ (u^2v^4 + u^2) = 2/u \
+
+    (diff z)/(diff v) = (2x)/(x^2 + y^2) dot u - (2y)/(x^2+y^2) dot u/v^2= ... = 2(v^4 -1)/((v^4 + 1)v)
+  $
+
+  ```
+  Решение может быть не верным
+  ```
+]
+
+
