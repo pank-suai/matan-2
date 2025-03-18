@@ -42,7 +42,6 @@ $
   cases(
     (diff u)/(diff x) = (diff f)/(diff x) + lambda (diff phi)/(diff x) = 0 \
     (diff u)/(diff y) = (diff f)/(diff y) + lambda (diff phi)/(diff y) = 0
-
   )
 $
 
