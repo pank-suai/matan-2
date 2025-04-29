@@ -1,10 +1,22 @@
 #import "lib/ilm.typ": *
 
 #set text(lang: "ru")
-#set math.equation(numbering: "1")
+#set math.equation(numbering: "(1)")
+
 
 #show ref: it => {
-  lower(it)
+  let eq = math.equation
+  let el = it.element
+  if el != none and el.func() == eq {
+    // Override equation references.
+    link(el.location(),numbering(
+      el.numbering,
+      ..counter(eq).at(el.location())
+    ))
+  } else {
+    // Other references as usual.
+    it
+  }
 }
 
 #show: ilm.with(
@@ -40,6 +52,7 @@
 
 
 #include "src/008_ряды.typ"
+
 /*
 ==============================================================================
                           Далее идут приложения
