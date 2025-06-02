@@ -1,5 +1,6 @@
 #import "lib/ilm.typ": *
 
+
 #set text(lang: "ru")
 #set math.equation(numbering: "(1)")
 
