@@ -1,9 +1,12 @@
 #import "lib/ilm.typ": *
-
+#import "@preview/frame-it:1.2.0": *
 
 #set text(lang: "ru")
 #set math.equation(numbering: "(1)")
+#show figure: set block(breakable: true)
 
+#show: frame-style(styles.hint)
+#show: frame-style(kind: "theorem", styles.boxy)
 
 #show ref: it => {
   let eq = math.equation
