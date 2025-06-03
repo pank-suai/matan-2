@@ -1,3 +1,6 @@
+#import "@preview/grayness:0.3.0": image-transparency
+#import "@preview/suiji:0.4.0": *
+
 // Workaround for the lack of an `std` scope.
 #let std-bibliography = bibliography
 #let std-smallcaps = smallcaps
@@ -153,8 +156,28 @@
     table-of-contents
   }
 
+  // watermark
+  
+  let watermark = read("watermark.png", encoding: none)
+
+
+
+  set page(background: context{
+
+    let i = counter(page).at(here()).first()
+    let rng = gen-rng-f(i + 611)
+
+
+    let (rng, x) = random(rng);
+    let (rng, y) = random(rng);
+
+place(dx: x * 21cm, dy: y * 30cm,
+    image-transparency(watermark, alpha:  7%, width: 100pt))
+  })
+  
+  
   // Configure page numbering and footer.
-  set page(footer: context {
+  set page( footer: context {
     // Get current page number.
     let i = counter(page).at(here()).first()
 
@@ -256,6 +279,8 @@
     show std-bibliography: set par(leading: 0.65em, justify: false, linebreaks: auto)
     bibliography
   }
+
+  
 
   // Display indices of figures, tables, and listings.
   let fig-t(kind) = figure.where(kind: kind)

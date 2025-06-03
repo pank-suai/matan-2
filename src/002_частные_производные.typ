@@ -4,7 +4,7 @@
 
 #let (theorem,) = frames(kind: "theorem", theorem: ("Теорема", rgb("#c1e0ff"),))
 
-#counter(figure.where(kind: "frame")).update(0)
+
 
 
 
@@ -178,7 +178,7 @@ $ <pribl_2>
 
 $
   frac(diff f(x;y), diff x), quad frac(diff f(x;y), diff y) \
-  (x;y) in cal(D)
+  (x;y) in D
 $
 
 Возьмём производную второго порядка по $x$ и по $y$:
@@ -203,14 +203,16 @@ $
 
 == Дифференциал высшего порядка
 
+// Тут можно добавить подробностей, но его нет в вопросах на экзамен и ощущение что этого и так достаточно
+
 $
-  dif^n x = ((diff z)/(diff x) dif x + (diff z) / (diff y) dif y)^n, quad n in cal(N)
+  dif^n z = ((diff z)/(diff x) dif x + (diff z) / (diff y) dif y)^n, quad n in cal(N)
 $
 
 #abstract(
   )[
   $
-    dif^2 z = dif (dif z) = dif ((diff z) / (diff x) dif x + (diff z)/(diff y) dif y) = \ = ((diff z) / (diff x) dif x + (diff z)/(diff y) dif y)'_x dif x + ((diff z) / (diff x) dif x + (diff z)/(diff y) dif y)'_y dif x = \ = (diff^2 z)/(diff x^2) dif x^2 + 2(diff^2 z)/(diff y diff x) dif y dif x + (diff^2z)/(diff y ^2 )
+    dif^2 z = dif (dif z) = dif ((diff z) / (diff x) dif x + (diff z)/(diff y) dif y) = \ = ((diff z) / (diff x) dif x + (diff z)/(diff y) dif y)'_x dif x + ((diff z) / (diff x) dif x + (diff z)/(diff y) dif y)'_y dif y = \ = (diff^2 z)/(diff x^2) dif x^2 + 2(diff^2 z)/(diff y diff x) dif y dif x + (diff^2z)/(diff y ^2 ) d y^2
   $
 ]
 
