@@ -17,13 +17,13 @@ $
 тогда приходим к следующему:
 
 $
-  (diff z)/(diff x) = - F'_x/F'_z\
-  (diff z)/(diff y) = - F'_y/F'_z
+  z'_x = (diff z)/(diff x) = - F'_x/F'_z\
+  z'_y = (diff z)/(diff y) = - F'_y/F'_z
 $
 
 Если $F(x; y) = 0$, то 
 
 $
-  y'x = (F'_x)/(F'_y)
+  y'_x = (F'_x)/(F'_y)
 $
 

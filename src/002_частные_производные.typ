@@ -144,7 +144,7 @@ $ <fulldif>
 ]
 
 
-== Применение полного дифференциала в приближённых вычислениях
+=== Применение полного дифференциала в приближённых вычислениях
 
 $
   Delta z approx dif z
@@ -214,21 +214,76 @@ $
   $
 ]
 
-= Дифференцирование сложных функций
+== Дифференцирование сложных функций
 
-Пусть $z = f(x,y)$, $x = x(t)$, $y = y(t)$, то тогда $z = f(x(t); y(t)) quad (x;y) in D$:
+=== Переменные функции зависят от некоторого единого аргумента
+
+Пусть $z = f(x,y)$, $x = x(t)$, $y = y(t)$, то тогда $z = f(x(t); y(t)) quad (x;y) in D$.
+
+#theorem[
+  / Теорема: Если в точке $t$ существуют производные $(dif x)/(dif t) = x'(t)$ и $(dif y)/(dif t) = y'(t)$ и при соответствующих значениях $x = x(t), y = y(t)$, функция $f(x,y)$ дифференцируема, то сложная функция $z = f(x(t), y(t))$ в точке $t$ имеет производную $ (dif z)/(dif t) = (diff z)/(diff x) dot (dif x)/(dif t) + (diff z)/(diff y) dot (dif y) / (dif t) $ <dif>
+
+  / Доказательство: Дадим $t$ приращение $Delta t$. Тогда $x$ и $y$ получат приращения $Delta x, Delta y$. В результате этого при $(Delta x)^2 + (Delta y)^2 != 0$ $z = f(x, y)$ также получит некоторое приращение $Delta z$, которое в силу дифференцируемости $z$ в точке $(x,y)$ может быть представлено в виде 
+    $
+      Delta z = (diff z)/(diff x) Delta x + (diff z)/ (diff y) + alpha Delta x + beta Delta y
+    $
+    где $alpha, beta -> 0$, при $Delta x, Delta y -> 0$
+
+    $alpha " и " beta$  непрерывны при $Delta x = Delta y = 0$.
+
+    Рассмотрим отношение:
+    $
+      (Delta z)/(Delta t) = (diff z)/(diff x) dot (Delta x)/(Delta t) + (diff z)/(diff y) dot (Delta y)/(Delta t) + alpha (Delta x)/(Delta t) + beta (Delta y)/(Delta t)
+    $ <shit2>
+
+    Каждое слагаемое имеет множитель (частные производные), который имеет предел при $Delta t$, тогда существуют пределы:
+
+    $
+      lim_(Delta t -> 0) (Delta x)/(Delta t) = (dif x)/(dif t) = x'(t)
+    $ (аналогично и по $y$)
+
+    Так как производные существуют, то в точке $t$ существует непрерывность, тогда $Delta t -> 0 => alpha, beta -> 0$, таким образом  @shit2 равна:
+
+    $
+       (dif z)/(dif t) =(diff z)/(diff x) dot (Delta x)/(Delta t) + (diff z)/(diff y) dot (Delta y)/(Delta t)
+    $
+]
+
+=== Только один из аргументов функции является функцией от другого аргумента функции
 
 $
-  (dif z)/(dif t) = (diff z)/(diff x) dot (dif x)/(dif y) + (diff z)/(diff y) dot (dif y) / (dif t) \
+  z = f(x, y), quad y = phi(x)
+$
+
+
+Тогда просто используя @dif и $x equiv t$, получим:
+
+$
   (dif z)/(dif x) = (diff z)/(diff x) + (diff z)/(diff y) dot (dif y)/(dif x)
 $
 
-Пусть $z = f(x, y)$, $x = x(u; v)$, $y = y(u;v)$, тогда:
+=== Аргументы функции -- функции с двумя переменными
 
-$
-  (diff z)/(diff u) = (diff z)/(diff x) dot (diff x)/(diff u) + (diff z)/(diff y) dot (diff y)/(diff u) \
-  (diff z)/(diff v) = (diff z)/(diff x) dot (diff x)/(diff v) + (diff z)/(diff y) dot (diff y)/(diff v)
-$
+Рассмотрим теперь дифференцирование сложной функции нескольких переменных. Пусть
+$ z = f(x, y) $, где $x = x(u, v)$, $y = y(u, v)$,
+$u$ и $v$ — независимые переменные.
+
+Будем предполагать, что $f(x, y)$, $x(u, v)$, $y(u, v)$ имеют непрерывные частные производные по всем своим аргументам. Найдем выражения для производных $frac(partial z, partial u)$ и $frac(partial z, partial v)$.
+
+Дадим $u$ приращение $Delta u$, оставив $v$ неизменным, тогда функции $x$ и $y$ получат частные приращения $Delta_u x$ и $Delta_u y$, функция $z$ получит приращение $Delta_u z$, тогда
+
+$ frac(partial z, partial u) = lim_(Delta u -> 0) frac(Delta_u z, Delta u) = lim_(Delta u -> 0) frac(f'_x Delta_u x + f'_y Delta_u y + w, Delta u) $
+
+где $w = alpha Delta_u x + beta Delta_u y$, и
+
+$ = f'_x dot lim_(Delta u -> 0) frac(Delta_u x, Delta u) + f'_y dot lim_(Delta u -> 0) frac(Delta_u y, Delta u) + lim_(Delta u -> 0) frac(w, Delta u) = f'_x frac(partial x, partial u) + f'_y frac(partial y, partial u) $
+
+Итак,
+#rect[
+$ frac(partial z, partial u) = frac(partial z, partial x) dot frac(partial x, partial u) + frac(partial z, partial y) dot frac(partial y, partial u) $
+
+$ frac(partial z, partial v) = frac(partial z, partial x) dot frac(partial x, partial v) + frac(partial z, partial y) dot frac(partial y, partial v) $
+]
 
 = Полная производная
 
