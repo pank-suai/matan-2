@@ -13,10 +13,10 @@
   let el = it.element
   if el != none and el.func() == eq {
     // Override equation references.
-    link(el.location(),numbering(
-      el.numbering,
-      ..counter(eq).at(el.location())
-    ))
+    link(
+      el.location(),
+      numbering(el.numbering, ..counter(eq).at(el.location())),
+    )
   } else {
     // Other references as usual.
     it
@@ -43,17 +43,14 @@
 
 #include "src/002_частные_производные.typ"
 
-
 #include "src/003_диф_неяв.typ"
 
-#include "src/004_кас_плоскость.typ"
+#include "src/004_экстремум_к_функции_двух_пер.typ"
 
-#include "src/005_экстремум_к_функции_двух_пер.typ"
+#include "src/005_приложения_фнп.typ"
 
-#include "src/006_производная_по_напр.typ"
 
 #include "src/007_диф_уравнения.typ"
-
 
 #include "src/008_ряды.typ"
 
