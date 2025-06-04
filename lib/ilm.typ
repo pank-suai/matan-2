@@ -172,7 +172,7 @@
     let (rng, y) = random(rng);
 
 place(dx: x * 21cm, dy: y * 30cm,
-    image-transparency(watermark, alpha:  7%, width: 100pt))
+    image-transparency(watermark, alpha:  8%, width: 100pt))
   })
   
   

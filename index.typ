@@ -8,6 +8,7 @@
 #show: frame-style(styles.hint)
 #show: frame-style(kind: "theorem", styles.boxy)
 
+
 #show ref: it => {
   let eq = math.equation
   let el = it.element
