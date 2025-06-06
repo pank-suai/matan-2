@@ -1,5 +1,7 @@
 #import "@preview/frame-it:1.2.0": *
 
+
+
 #let (abstract, example) = frames(abstract: ("Замечание", gray), example: ("Пример"))
 
 #let (theorem,) = frames(kind: "theorem", theorem: ("Теорема", rgb("#c1e0ff"),))

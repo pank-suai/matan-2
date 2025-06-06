@@ -96,6 +96,8 @@ $
   Delta x = d x quad Delta y = d y
 $ <fulldif>
 
+
+
 / Необходимое условие дифференцируемости функции: Если $z = f(x; y)$ дифференцируема в точке $M$, то она непрерывна в этой точке и
   имеет частные производные: $(diff z)/(diff x) = A$, $(diff x)/(diff y) = B$.
 
@@ -135,6 +137,7 @@ $ <fulldif>
       A = lim_(Delta x -> 0) (Delta z_x)/(Delta x)
     $ <shit>
 
+
     @shit является определением частной производной, аналогично можно прийти к y.
   / Следует: $Delta z = (diff z)/(diff x) Delta x + (diff z)/(diff y) Delta y + alpha Delta x + Beta Delta y$
 
@@ -146,6 +149,7 @@ $ <fulldif>
 
 === Применение полного дифференциала в приближённых вычислениях
 
+
 $
   Delta z approx dif z
 $ <pribl_1> 
@@ -153,6 +157,8 @@ $ <pribl_1>
 $
   f(x + Delta x; y + Delta y) approx f(x; y) + f'_x (x;y) Delta x + f'_y (x;y) Delta y
 $ <pribl_2>
+
+
 
 
 #example[
@@ -223,7 +229,11 @@ $
 Пусть $z = f(x,y)$, $x = x(t)$, $y = y(t)$, то тогда $z = f(x(t); y(t)) quad (x;y) in D$.
 
 #theorem[
-  / Теорема: Если в точке $t$ существуют производные $(dif x)/(dif t) = x'(t)$ и $(dif y)/(dif t) = y'(t)$ и при соответствующих значениях $x = x(t), y = y(t)$, функция $f(x,y)$ дифференцируема, то сложная функция $z = f(x(t), y(t))$ в точке $t$ имеет производную $ (dif z)/(dif t) = (diff z)/(diff x) dot (dif x)/(dif t) + (diff z)/(diff y) dot (dif y) / (dif t) $ <dif>
+
+  / Теорема: Если в точке $t$ существуют производные $(dif x)/(dif t) = x'(t)$ и $(dif y)/(dif t) = y'(t)$ и при соответствующих значениях $x = x(t), y = y(t)$, функция $f(x,y)$ дифференцируема, то сложная функция $z = f(x(t), y(t))$ в точке $t$ имеет производную
+  $ (dif z)/(dif t) = (diff z)/(diff x) dot (dif x)/(dif t) + (diff z)/(diff y) dot (dif y) / (dif t) $ <dif>
+
+
 
   / Доказательство: Дадим $t$ приращение $Delta t$. Тогда $x$ и $y$ получат приращения $Delta x, Delta y$. В результате этого при $(Delta x)^2 + (Delta y)^2 != 0$ $z = f(x, y)$ также получит некоторое приращение $Delta z$, которое в силу дифференцируемости $z$ в точке $(x,y)$ может быть представлено в виде 
     $
@@ -233,10 +243,13 @@ $
 
     $alpha " и " beta$  непрерывны при $Delta x = Delta y = 0$.
 
+
     Рассмотрим отношение:
     $
       (Delta z)/(Delta t) = (diff z)/(diff x) dot (Delta x)/(Delta t) + (diff z)/(diff y) dot (Delta y)/(Delta t) + alpha (Delta x)/(Delta t) + beta (Delta y)/(Delta t)
     $ <shit2>
+
+
 
     Каждое слагаемое имеет множитель (частные производные), который имеет предел при $Delta t$, тогда существуют пределы:
 
@@ -287,5 +300,4 @@ $ frac(partial z, partial u) = frac(partial z, partial x) dot frac(partial x, pa
 $ frac(partial z, partial v) = frac(partial z, partial x) dot frac(partial x, partial v) + frac(partial z, partial y) dot frac(partial y, partial v) $
 ]
 
-= Полная производная
 

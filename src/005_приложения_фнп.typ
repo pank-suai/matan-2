@@ -1,5 +1,6 @@
 #import "@preview/frame-it:1.2.0": *
 
+
 #let (abstract, example) = frames(abstract: ("Замечание", gray), example: ("Пример"))
 
 #let (theorem,) = frames(kind: "theorem", theorem: ("Теорема", rgb("#c1e0ff"),))
@@ -18,6 +19,7 @@
 $ lim_(Delta rho -> 0) (Delta f_l)/(Delta rho) = lim_(Delta rho -> 0) (f(x_0 + Delta x; y_0 + Delta y) - f(x_0; y_0))/(Delta rho) = (partial f)/(partial l)(x_0; y_0) $ <dif_l>
 
 @dif_l называется производной функции $f$ по направлению $arrow(l)$.
+
 
 Если хотим его выразить через $(diff f)/(diff x)$, $(diff f)/(diff y)$, то получим следующее
 

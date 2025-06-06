@@ -2,27 +2,14 @@
 #import "@preview/frame-it:1.2.0": *
 
 #set text(lang: "ru")
-#set math.equation(numbering: "(1)")
+
 #show figure: set block(breakable: true)
 
 #show: frame-style(styles.hint)
 #show: frame-style(kind: "theorem", styles.boxy)
+//#show figure.where(kind: "frame"): set figure(numbering: none)
 
 
-#show ref: it => {
-  let eq = math.equation
-  let el = it.element
-  if el != none and el.func() == eq {
-    // Override equation references.
-    link(
-      el.location(),
-      numbering(el.numbering, ..counter(eq).at(el.location())),
-    )
-  } else {
-    // Other references as usual.
-    it
-  }
-}
 
 #show: ilm.with(
   title: [Мат. анализ],
@@ -39,6 +26,44 @@
   table-of-contents: outline(depth: 2),
   external-link-circle: false,
 )
+
+
+
+#show heading.where(level: 1): it => [
+ #counter(math.equation).update(0)
+ #it
+]
+
+
+
+// Только мат. выражения с ссылкой будут иметь номер
+#show math.equation: it => {
+  if it.block and not it.has("label") [
+    #counter(math.equation).update(v => calc.max(v - 1, 0))
+    #math.equation(it.body, block: true, numbering: none)#label("")
+  ] else {
+    it
+  }  
+}
+
+#show ref: it => {
+  let eq = math.equation
+  let el = it.element
+  if el != none and el.func() == eq {
+    // Override equation references.
+    link(
+      el.location(),
+      numbering(el.numbering, ..counter(eq).at(el.location())),
+    )
+  }else if inspect.is-frame(it.element) {
+    link(it.element.location(), inspect.lookup-frame-info(it.element).title)
+  } else {
+    // Other references as usual.
+    it
+  }
+}
+
+
 
 #include "src/001_функция_нескольких_переменных.typ"
 
