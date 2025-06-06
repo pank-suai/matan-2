@@ -175,14 +175,14 @@ $
   можно свести к уравнению в полных дифференциалах умноженных на некоторую функцию $t(x,y) = t$ называемую
   *"интегрирующим множителем"*. Интегрирующий множитель лего найти в двух случаях:
   $ t = t(x) => t(x) = e^(integral ((diff P)/(diff y) - (diff Q)/(diff x))/Q dif x ) $
-  $ t = t(y) => t(y) = e^(integral ((diff Q)/(diff y) - (diff P)/(diff x))/P dif x ) $
+  $ t = t(y) => t(y) = e^(integral ((diff Q)/(diff y) - (diff P)/(diff x))/P dif y ) $
 
 Функцию же $U$ можно найти следующими способами:
 
-+ $
+ $
     cases((diff U)/(diff x) = P(x, y), (diff U)/(diff y) = Q(x, y))
   $
-+ $
+ $
     U(x, y) = integral^x_x_0 P(x, y) dif x + integral^y_y_0 Q(x_0, y) dif y
   $
 
