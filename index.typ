@@ -29,7 +29,7 @@
 
 
 
-#show heading.where(level: 1): it => [
+#show heading.where(level: 2): it => [
  #counter(math.equation).update(0)
  #it
 ]
